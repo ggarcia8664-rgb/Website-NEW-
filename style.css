@@ -1,34 +1,74 @@
-/* Reset and basic styling */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
 }
 
 body {
-    background-color: white;
-    font-family: Arial, sans-serif;
     height: 100vh;
+    background-color: #fde2e8;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.container {
+.page {
+    display: none;
     text-align: center;
+    min-height: 100vh;
 }
 
-.main-header {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 1rem;
-    letter-spacing: 2px;
+.page.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 32px;
 }
 
-.sub-header {
-    font-size: 1.5rem;
-    font-weight: normal;
-    color: #666;
-    margin-bottom: 2rem;
+h1 {
+    font-size: 3.2rem;
+    color: #7a2e3a;
+    margin-bottom: 20px;
+}
+
+.start-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.start-subtitle {
+    font-size: 1rem;
+    color: #7a2e3a;
+    margin-bottom: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#start-btn {
+    padding: 10px 30px;
+    font-size: 1rem;
+    background-color: #f28b9c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+#start-btn:hover {
+    background-color: #ec6f85;
+    transform: scale(1.05);
+}
+
+.heart-container {
+    margin-top: 30px;
+}
+
+.heart-container img {
+    width: 150px;
+    height: auto;
 }
