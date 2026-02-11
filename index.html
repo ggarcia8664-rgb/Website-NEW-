@@ -3,27 +3,112 @@
 <head>
     <meta charset="UTF-8" />
     <title>Valentine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+    <div class="hearts"></div>
 
     <!-- PAGE 1 -->
     <div id="start-page" class="page active">
-        <h1>Hi bubs</h1>
+        <h1>Hi Bubs!!</h1>
 
         <div class="start-content">
+            
+            <svg class="heart-photo" viewBox="0 0 512 512">
+              <defs>
+                <clipPath id="heartClip">
+                  <path d="M256 464s-16-12-34-26C140 372 64 308 64 216c0-66 50-120 116-120 44 0 77 24 96 52 19-28 52-52 96-52 66 0 116 54 116 120 0 92-76 156-158 222-18 14-34 26-34 26z"/>
+                </clipPath>
+              </defs>
+
+              <image
+                href="Imgs/me and you.jpg"
+                width="512"
+                height="512"
+                preserveAspectRatio="xMidYMid slice"
+                clip-path="url(#heartClip)"
+              />
+            </svg>
+
             <h2 class="start-subtitle">Click start</h2>
             <button id="start-btn">START</button>
-
-            <div class="heart-container">
-                <img src="Imgs/heart-placeholder.png" alt="Heart placeholder">
-            </div>
         </div>
     </div>
 
     <!-- PAGE 2 -->
     <div id="next-page" class="page">
-        <h1>Will you be my Valentine? 💘</h1>
+      <h1 class="val-title">Will you be my Valentine?</h1>
+
+      <img class="cat-img" src="Imgs/cat 1.png" alt="Cat holding flowers" />
+
+      <div class="btn-row">
+        <button class="heart-btn" id="yes-red">
+          <svg viewBox="0 0 32 29.6">
+            <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+          </svg>
+          <span>YES!</span>
+        </button>
+
+        <button class="heart-btn blue" id="yes-blue">
+          <svg viewBox="0 0 32 29.6">
+            <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+          </svg>
+          <span>YES! but in blue</span>
+        </button>
+      </div>
+
+      <button class="no-btn" id="no-btn" aria-label="No">
+        <svg viewBox="0 0 32 29.6">
+          <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+          <line x1="8" y1="6" x2="24" y2="20" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <span>no...</span>
+      </button>
+
+      <button id="reset-btn" class="reset-btn">Reset</button>
+    </div>
+
+    <!-- PAGE 3 (Outfit page) -->
+    <div id="outfit-page" class="page">
+      <div class="outfit-wrap">
+
+        <!-- Reservation Box -->
+        <div class="date-card">
+          <h2>Feb.14.26</h2>
+          <p>Location: <b>Romanissimo Cucina Italiana</b></p>
+          <p class="time">Time: <b>8:30PM</b></p>
+        </div>
+
+        <!-- My Outfit Box -->
+        <div class="outfit-card">
+          <h2>My outfit ---&gt;</h2>
+          <p>For your own inspo</p>
+        </div>
+
+        <!-- Outfit Images -->
+        <div class="outfit-grid">
+          <div class="fit-item sweater">
+            <p class="fit-label">Black knit sweater</p>
+            <img src="Imgs/Ruko sweater fit.jpg" alt="Black knit sweater" />
+          </div>
+
+          <div class="fit-item pants">
+            <p class="fit-label">Black baggy<br>jeans (maybe blue lmk)</p>
+            <img src="Imgs/ruko pants fit.png" alt="Black baggy jeans" />
+          </div>
+
+          <div class="fit-item boots">
+            <p class="fit-label">Brown docs</p>
+            <img src="Imgs/ruko boots fit.png" alt="Brown docs" />
+          </div>
+        </div>
+
+        <button id="back-to-val-btn" class="reset-btn">Back</button>
+
+      </div>
     </div>
 
     <script src="script.js"></script>

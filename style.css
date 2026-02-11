@@ -23,21 +23,22 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 32px;
+    justify-content: center;   /* THIS centers everything vertically */
+    min-height: 100vh;
 }
 
 h1 {
+    font-family: "Great Vibes", cursive;
     font-size: 3.2rem;
     color: #7a2e3a;
     margin-bottom: 20px;
 }
 
 .start-content {
-    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 18px;   /* controls spacing evenly */
 }
 
 .start-subtitle {
@@ -64,11 +65,286 @@ h1 {
     transform: scale(1.05);
 }
 
-.heart-container {
-    margin-top: 30px;
+.reset-btn {
+    padding: 10px 30px;
+    font-size: 1rem;
+    background-color: #b8b8b8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    margin-top: 20px;
 }
 
-.heart-container img {
-    width: 150px;
-    height: auto;
+.reset-btn:hover {
+    background-color: #9e9e9e;
+    transform: scale(1.05);
+}
+
+.heart-photo {
+  width: 480px;
+  height: 480px;
+  margin: 30px auto;
+  display: block;
+}
+
+/* Make sure hearts float behind everything */
+.hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.page { position: relative; z-index: 2; }
+
+/* PAGE 2 styling */
+#next-page {
+  gap: 22px;
+}
+
+.val-title {
+  font-size: calc(2rem + 50px);
+  color: #000;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.cat-img {
+  width: 230px;
+  height: auto;
+  border-radius: 10px;
+  background: #fde2e8;
+}
+
+/* row for the two big hearts */
+.btn-row {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* big heart button base */
+.heart-btn {
+  position: relative;
+  width: 220px;
+  height: 190px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.heart-btn svg {
+  width: 100%;
+  height: 100%;
+  fill: #ff6b9d;
+}
+
+/* text centered on the heart */
+.heart-btn span {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  color: #000;
+  font-size: 0.9rem;
+}
+
+/* Make the second heart blue using CSS fill */
+.heart-btn.blue svg {
+  fill: #6ba3ff;
+}
+
+/* small broken heart "no..." */
+.no-btn {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-top: -10px;
+}
+
+.no-btn svg {
+  width: 100%;
+  height: 100%;
+  fill: #999;
+}
+
+.no-btn span {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #000;
+  transform: translateY(6px);
+}
+
+/* hide reset unless you want it visible */
+#next-page .reset-btn {
+  margin-top: 20px;
+}
+
+/* PAGE 3 Outfit Layout */
+#outfit-page {
+  width: 100%;
+  padding: 30px;
+}
+
+.outfit-wrap {
+  width: min(1100px, 95vw);
+  min-height: 100vh;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* date card like the screenshot */
+.date-card {
+  position: absolute;
+  left: 40px;
+  top: 120px;
+  border: 3px solid #111;
+  padding: 18px 26px;
+  background: rgba(255,255,255,0.0);
+  text-align: left;
+  min-width: 330px;
+}
+
+.date-card h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #111;
+}
+
+.date-card p {
+  margin: 6px 0;
+  font-size: 1rem;
+  color: #111;
+}
+
+.date-card .time {
+  margin-top: 22px;
+}
+
+/* Second box under reservation */
+.outfit-card {
+  position: absolute;
+  left: 40px;
+  top: 340px;   /* adjust if needed */
+  border: 3px solid #111;
+  padding: 22px 26px;
+  text-align: left;
+  min-width: 330px;
+}
+
+.outfit-card h2 {
+  margin: 0 0 12px 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #111;
+}
+
+.outfit-card p {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111;
+}
+
+/* outfit images positioned like your mock */
+.outfit-grid {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+/* general item */
+.fit-item {
+  position: absolute;
+  text-align: center;
+}
+
+.fit-label {
+  font-size: 1.2rem;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+/* sweater top right */
+.fit-item.sweater {
+  right: 40px;
+  top: 40px;
+}
+
+.fit-item.sweater img {
+  width: 230px;
+  height: auto;
+}
+
+/* pants middle right-ish */
+.fit-item.pants {
+  right: 320px;
+  top: 230px;
+}
+
+.fit-item.pants img {
+  width: 220px;
+  height: auto;
+}
+
+/* boots bottom right */
+.fit-item.boots {
+  right: 60px;
+  bottom: 60px;
+}
+
+.fit-item.boots img {
+  width: 240px;
+  height: auto;
+}
+
+/* back button */
+#back-to-val-btn {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+}
+
+.heart {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.55;
+  animation: floatUp 10s linear infinite;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
 }
