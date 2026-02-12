@@ -1,4 +1,6 @@
 // ===== PAGE ELEMENTS =====
+const welcomePage = document.getElementById("welcome-page");
+const continueBox = document.getElementById("continue-box");
 const startBtn = document.getElementById("start-btn");
 const startPage = document.getElementById("start-page");
 const balloonPage = document.getElementById("balloon-page");
@@ -14,6 +16,13 @@ const noBtn = document.getElementById("no-btn");
 
 const balloonBtn = document.getElementById("balloon-btn");
 const balloonText = document.getElementById("balloon-text");
+
+
+// ===== CONTINUE BOX → GO TO START PAGE =====
+continueBox.addEventListener("click", () => {
+  welcomePage.classList.remove("active");
+  startPage.classList.add("active");
+});
 
 
 // ===== START BUTTON → GO TO BALLOON PAGE =====
@@ -81,7 +90,7 @@ resetBtn.addEventListener("click", () => {
   nextPage.classList.remove("active");
   outfitPage.classList.remove("active");
   balloonPage.classList.remove("active");
-  startPage.classList.add("active");
+  welcomePage.classList.add("active");
 
   // Reset balloon state
   balloonClicks = 0;

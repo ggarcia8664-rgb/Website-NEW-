@@ -27,6 +27,37 @@ body {
     min-height: 100vh;
 }
 
+/* Welcome Page */
+#welcome-page {
+    background-color: white;
+    width: 100vw;
+    padding: 60px;
+}
+
+.welcome-title {
+    font-family: "Arial", sans-serif;
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+.continue-box {
+    font-family: "Arial", sans-serif;
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 400;
+    padding: 15px 50px;
+    border: 2px solid #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.continue-box:hover {
+    background-color: #333;
+    color: white;
+}
+
 h1 {
     font-family: "Great Vibes", cursive;
     font-size: 3.2rem;
